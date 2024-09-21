@@ -7,7 +7,7 @@ import { LoginPage } from '../pages/LoginPage';
 import { DashboardPage } from '../pages/DashboardPage';
 import { ArtworksPage } from '../pages/ArtworksPage';
 import { AddArtworkPage } from '../pages/AddArtworkPage';
-import { ArtworkDetailsPage } from '../pages/ArtworkDetailsPage';
+import { ArtworkDetailsPage } from '../pages/ArtWorkDetailsPage';
 import config from '../data/config.json';
 
 

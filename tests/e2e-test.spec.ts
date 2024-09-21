@@ -9,6 +9,7 @@ import { ArtworksPage } from '../pages/ArtworksPage';
 import { AddArtworkPage } from '../pages/AddArtworkPage';
 import { ArtworkDetailsPage } from '../pages/ArtWorkDetailsPage';
 import config from '../data/config.json';
+import logger from  '../utils/logger';
 
 
 test('Add a new artwork and submit a review', async ({ page }) => {
@@ -22,42 +23,33 @@ test('Add a new artwork and submit a review', async ({ page }) => {
     // Generate a dynamic artwork title
     const artworkTitle = 'Test New Art Work ' + Date.now();
 
-    // Go to the homepage and navigate to login
     await homePage.goto();
     await homePage.clickLogin();
-
-    // Log in to the application
+    logger.info('Go to the homepage and navigate to login');
     await loginPage.login(config.username, config.password);
-
-    // Navigate to 'Artworks' and click 'Add Artwork'
+    logger.info('Log in to the application');
     await dashboardPage.navigateToArtworks();
     await artworksPage.clickAddArtwork();
-
-    // Fill in artwork details
+    logger.info('Navigate to Artworks and click Add Artwork');
     await addArtworkPage.fillArtworkDetails(artworkTitle);
-
-    // Upload the artwork image
+    logger.info('Fill in artwork details');
     const filePath = path.resolve('resources/image.jpg'); // Adjust the path accordingly
     await addArtworkPage.uploadFile(filePath);
-
-    // Select category, year, production volume, and date
+    logger.info('Upload the artwork image');
     await addArtworkPage.selectCategory('Portraits');
     await addArtworkPage.selectYear('2020');
     await addArtworkPage.selectProductionVolume('10 - 24 /year');
     await addArtworkPage.selectCreatedOnDate();
-
-    // Check 'Artist Royalty' and another 'Yes' option
+    logger.info('Select category, year, production volume, and date');
     await addArtworkPage.checkArtistRoyalty();
     await addArtworkPage.checkAnotherYesOption();
-
-    // Publish the artwork
+    logger.info('Check \'Artist Royalty\' and another \'Yes\' option');
     await addArtworkPage.publishArtwork();
-
-    // Verify the new artwork is displayed
+    logger.info('Publish the artwork');
     await expect(page.getByRole('heading', { name: artworkTitle })).toBeVisible();
     await page.getByRole('heading', { name: artworkTitle }).click();
-
-    // Submit a review for the artwork
+    logger.info('Verify the new artwork is displayed After Creation');
     await artworkDetailsPage.navigateToReviews();
     await artworkDetailsPage.submitReview('Review Test', 'Test Automation');
+    logger.info('Submit a review for the artwork');
 });

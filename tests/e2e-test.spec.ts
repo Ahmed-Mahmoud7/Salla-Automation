@@ -8,6 +8,8 @@ import { DashboardPage } from '../pages/DashboardPage';
 import { ArtworksPage } from '../pages/ArtworksPage';
 import { AddArtworkPage } from '../pages/AddArtworkPage';
 import { ArtworkDetailsPage } from '../pages/ArtworkDetailsPage';
+import config from '../data/config.json';
+
 
 test('Add a new artwork and submit a review', async ({ page }) => {
     const homePage = new HomePage(page);
@@ -25,7 +27,7 @@ test('Add a new artwork and submit a review', async ({ page }) => {
     await homePage.clickLogin();
 
     // Log in to the application
-    await loginPage.login('jamiwa8396@tospage.com', 'nhk9dad2EQW!xae_bpm');
+    await loginPage.login(config.username, config.password);
 
     // Navigate to 'Artworks' and click 'Add Artwork'
     await dashboardPage.navigateToArtworks();

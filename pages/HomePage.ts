@@ -10,7 +10,7 @@ export class HomePage {
     }
 
     async goto() {
-        await this.page.goto('https://staging.alt.art/');
+        await this.page.goto('/');
         await this.page.waitForTimeout(3000);
     }
 

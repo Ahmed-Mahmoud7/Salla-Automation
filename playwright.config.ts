@@ -35,7 +35,7 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     /* Disable headless mode to run tests in the browser UI */
-    headless: false,  // Add this line to run tests in UI mode
+    headless: true,  // Add this line to run tests in UI mode
   },
 
   /* Configure projects for major browsers */

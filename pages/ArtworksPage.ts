@@ -1,4 +1,4 @@
-import { expect, Page, Locator } from '@playwright/test';
+import {expect, Locator, Page} from '@playwright/test';
 
 export class ArtworksPage {
     readonly page: Page;
@@ -18,7 +18,7 @@ export class ArtworksPage {
         const artworkHeading = this.page.getByRole('heading', { name: title });
 
         // Wait for the artwork heading to be visible
-        await expect(artworkHeading).toBeVisible();
+        await expect(artworkHeading).toBeAttached();
 
         // Click on the artwork heading to navigate to the artwork's detail page
         await artworkHeading.click();

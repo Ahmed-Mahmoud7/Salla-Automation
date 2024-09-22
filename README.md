@@ -21,10 +21,29 @@ Before setting up the project, ensure you have the following installed:
 # Installation
 
 
-
-
-
-
-
 # Project Structure 
+
+```bash
+project-root/
+├── pages/                   # Page Object Model classes
+│   ├── HomePage.ts
+│   ├── LoginPage.ts
+│   ├── DashboardPage.ts
+│   ├── ArtworksPage.ts
+│   ├── AddArtworkPage.ts
+│   └── ArtworkDetailsPage.ts
+├── tests/                   # Test files
+│   └── addArtwork.spec.ts
+├── utils/                   # Utility modules
+│   └── logger.ts
+├── logs/                    # Log files
+│   └── automation.log
+├── config/                  # Configuration files
+│   └── config.json          # Optional if not using environment variables
+    
+├── .gitignore
+├── playwright.config.ts     # Playwright configuration
+├── tsconfig.json            # TypeScript configuration
+├── package.json             # npm configuration
+└── README.md                # Project documentation
 

@@ -9,3 +9,31 @@ This framework leverages Playwright for robust and reliable end-to-end testing, 
 - Logging with Winston: Detailed logging for debugging and analysis.
 - HTML Reporting: Generate comprehensive test reports.
 - CI Integration: Seamless integration with GitHub Actions for automated testing.
+
+
+# Prerequisites
+Before setting up the project, ensure you have the following installed:
+
+- Node.js (version 14 or above)
+- npm (comes with Node.js)
+- Git (for version control)
+
+# Installation
+Clone the Repository
+
+bash
+Copy code
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+Install Dependencies
+
+bash
+Copy code
+npm install
+Install Playwright Browsers
+
+Playwright requires browser binaries to run tests.
+
+bash
+Copy code
+npx playwright install

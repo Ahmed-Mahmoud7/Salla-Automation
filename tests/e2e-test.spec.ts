@@ -1,5 +1,5 @@
 // tests/addArtwork.spec.ts
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 // @ts-ignore
 import path from 'path';
 import  {PageManager} from "../pages/PageManager";
@@ -36,8 +36,7 @@ test('Add a new artwork and submit a review', async ({ page }) => {
     logger.info('Check \'Artist Royalty\' and another \'Yes\' option');
     await pm.onAddArtWorkPage().publishArtwork();
     logger.info('Publish the artwork');
-    await expect(page.getByRole('heading', { name: artworkTitle })).toBeVisible();
-    await page.getByRole('heading', { name: artworkTitle }).click();
+    await pm.onArtWorksPage().selectArtworkByTitle(artworkTitle);
     logger.info('Verify the new artwork is displayed After Creation');
     await pm.onArtWorkDetailsPage().navigateToReviews();
     await pm.onArtWorkDetailsPage().submitReview('Review Test', 'Test Automation');

@@ -19,21 +19,12 @@ Before setting up the project, ensure you have the following installed:
 - Git (for version control)
 
 # Installation
-Clone the Repository
 
-bash
-Copy code
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-Install Dependencies
 
-bash
-Copy code
-npm install
-Install Playwright Browsers
 
-Playwright requires browser binaries to run tests.
 
-bash
-Copy code
-npx playwright install
+
+
+
+# Project Structure 
+

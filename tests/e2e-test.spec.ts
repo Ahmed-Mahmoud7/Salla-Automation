@@ -37,8 +37,10 @@ test('Add a new artwork and submit a review', async ({ page }) => {
     await pm.onAddArtWorkPage().publishArtwork();
     logger.info('Publish the artwork');
     await pm.onArtWorksPage().selectArtworkByTitle(artworkTitle);
-    logger.info('Verify the new artwork is displayed After Creation');
+    await page.screenshot({ path: 'screenshots/NewArtworkAddedSuccess.png', fullPage: true });
+    logger.info('Verify the new artwork is displayed After Creation and take a screenshot');
     await pm.onArtWorkDetailsPage().navigateToReviews();
     await pm.onArtWorkDetailsPage().submitReview('Review Test', 'Test Automation');
     logger.info('Submit a review for the artwork');
+    await page.screenshot({ path: 'screenshots/ReviewAddedSuccess.png', fullPage: true });
 });

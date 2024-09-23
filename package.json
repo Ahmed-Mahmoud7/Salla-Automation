@@ -2,7 +2,9 @@
   "name": "salla-automation",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "sallaAutomationTask": "npx playwright test --project=chromium  --project=firefox --project=webkit --repeat-each=10 --workers=5"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

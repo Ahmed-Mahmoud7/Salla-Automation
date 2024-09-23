@@ -102,14 +102,15 @@ project-root/
 ├── playwright.config.ts     # Playwright configuration
 ├── tsconfig.json            # TypeScript configuration
 └── README.md                # Project documentation
-
+ ``` 
 
 # Screenshots
 
-Here are some screenshots demonstrating the test results:
+Here are some screenshots demonstrating execution and test results: 
+![image](https://github.com/user-attachments/assets/a39abe8c-ac95-4cae-a5de-95975e22ff17)
+![image](https://github.com/user-attachments/assets/d95a70c5-8485-4b54-9cf1-80bfb54a948c)
 
-![image](https://github.com/user-attachments/assets/2993732b-1713-4661-8a1f-8c690527591b)
-![image](https://github.com/user-attachments/assets/74f74dbc-25d4-41ff-9734-6e069f942329)
+
 
 
 

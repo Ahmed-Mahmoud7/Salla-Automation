@@ -1,4 +1,5 @@
 import {expect, Locator, Page} from '@playwright/test';
+import {assertElementToBeActionable} from '../utils/customAssertion';
 
 export class ArtworksPage {
     readonly page: Page;
@@ -17,8 +18,10 @@ export class ArtworksPage {
         // Locate the artwork heading using the provided title
         const artworkHeading = this.page.getByRole('heading', { name: title });
 
-        // Wait for the artwork heading to be visible
-        await expect(artworkHeading).toBeAttached();
+        // Use custom assertion to ensure the element is actionable
+        await assertElementToBeActionable(artworkHeading);
+
+
 
         // Click on the artwork heading to navigate to the artwork's detail page
         await artworkHeading.click();

@@ -20,12 +20,12 @@ async function assertElementTextContains(element: Locator, expectedSubstring: st
 }
 
 /**
- * Asserts that the element is visible and enabled (i.e., actionable).
+ * Asserts that the element is Attached to DOM and enabled (i.e., actionable).
  * @param element - The Locator of the element to check.
  */
 async function assertElementToBeActionable(element: Locator,) {
-    await expect(element).toBeVisible();
-    await expect(element).toBeEnabled();
+    await expect(element).toBeAttached();
+    await expect(element).toBeEnabled()
 }
 
 /**

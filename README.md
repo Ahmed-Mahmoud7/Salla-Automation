@@ -39,31 +39,40 @@ install Playwright and its browsers:
 
 You can now run the Playwright tests using the following command:
 
+```bash
 - npx playwright test
+```
 
 To run the test from NPM Scripts using this command:
 
+```bash
 - npm run sallaAutomationTask
-
+```
 To run a specific test file, for example, e2e-test.spec.ts, use:
 
+```bash
 - npx playwright test tests/e2e-test.spec.ts
-
+```
 To run the test on multiple browses 10 times :
 
+```bash
 - npx playwright test --project=chromium --project=firefox --project=webkit --repeat-each=10 --workers=5
-
+```
 To run the test in Headed Mode:
 
+```bash
 - npx playwright test --headed
-
+```
 To run the test with Debugging:
 
+```bash
 - npx playwright test --debug
-
+```
 To open the Playwright Test Report:
 
+```bash
 - npx playwright show-report
+```
 
 # Project Structure 
 
@@ -108,6 +117,7 @@ project-root/
 
 Here are some screenshots demonstrating execution and test results: 
 ![image](https://github.com/user-attachments/assets/a39abe8c-ac95-4cae-a5de-95975e22ff17)
+
 ![image](https://github.com/user-attachments/assets/d95a70c5-8485-4b54-9cf1-80bfb54a948c)
 
 

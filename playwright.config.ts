@@ -36,6 +36,8 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    /* Recorde Video for the test during execution */
+    video: 'on',
     /* Disable headless mode to run tests in the browser UI */
     headless: true,  // Add this line to run tests in UI mode
   },

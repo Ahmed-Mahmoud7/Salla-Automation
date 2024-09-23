@@ -53,6 +53,14 @@ To run the test on multiple browses 10 times :
 
 - npx playwright test --project=chromium --project=firefox --project=webkit --repeat-each=10 --workers=5
 
+To run the test in Headed Mode:
+
+- npx playwright test --headed
+
+To run the test with Debugging:
+
+- npx playwright test --debug
+
 To open the Playwright Test Report:
 
 - npx playwright show-report

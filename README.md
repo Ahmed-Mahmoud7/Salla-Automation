@@ -118,10 +118,4 @@ project-root/
 Here are some screenshots demonstrating execution and test results: 
 ![image](https://github.com/user-attachments/assets/a39abe8c-ac95-4cae-a5de-95975e22ff17)
 
-![image](https://github.com/user-attachments/assets/d95a70c5-8485-4b54-9cf1-80bfb54a948c)
-
-
-
-
-
 

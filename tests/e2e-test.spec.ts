@@ -1,10 +1,10 @@
 // tests/addArtwork.spec.ts
-import { test } from '@playwright/test';
+import {test} from '@playwright/test';
 // @ts-ignore
 import path from 'path';
-import  {PageManager} from "../pages/PageManager";
+import {PageManager} from "../pages/PageManager";
 import config from '../data/config.json';
-import logger from  '../utils/logger';
+import logger from '../utils/logger';
 
 
 test('Add a new artwork and submit a review', async ({ page }) => {
@@ -38,7 +38,7 @@ test('Add a new artwork and submit a review', async ({ page }) => {
     logger.info('Publish the artwork');
     await pm.onArtWorksPage().selectArtworkByTitle(artworkTitle);
     await page.screenshot({ path: 'screenshots/NewArtworkAddedSuccess.png', fullPage: true });
-    logger.info('Verify the new artwork is displayed After Creation and take a screenshot');
+    logger.info('Verify and assert that the new artwork is displayed After Creation and take a screenshot');
     await pm.onArtWorkDetailsPage().navigateToReviews();
     await pm.onArtWorkDetailsPage().submitReview('Review Test', 'Test Automation');
     logger.info('Submit a review for the artwork');

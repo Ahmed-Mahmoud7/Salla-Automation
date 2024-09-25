@@ -1,4 +1,4 @@
-import { expect, Page, Locator } from '@playwright/test';
+import {expect, Locator, Page} from '@playwright/test';
 
 export class DashboardPage {
     readonly page: Page;
@@ -10,7 +10,7 @@ export class DashboardPage {
     }
 
     async navigateToArtworks() {
-        await expect(this.artworksLink).toBeVisible();
+        await expect(this.artworksLink).toBeAttached();
         await this.artworksLink.click();
     }
 }

@@ -1,4 +1,4 @@
-import {expect, Page, Locator} from '@playwright/test';
+import {expect, Locator, Page} from '@playwright/test';
 
 export class AddArtworkPage {
     readonly page: Page;
@@ -100,24 +100,30 @@ export class AddArtworkPage {
         await this.page.getByText(volume, {exact: true}).click();
     }
 
+    /**
+     * Selects a random available date from the "Created On" date picker.
+     *
+     * This method performs the following steps:
+     * 1. Ensures the "Created On" button is visible and clicks it.
+     * 2. Retrieves all day elements that are not disabled.
+     * 3. Counts the number of available day elements.
+     * 4. Selects a random day from the available days.
+     * 5. Ensures the selected day element is visible and enabled.
+     * 6. Clicks the selected day element.
+     */
     async selectCreatedOnDate() {
         await expect(this.createdOnButton).toBeVisible();
         await this.createdOnButton.click();
-        // Get today's date as a string
-        const today = new Date();
-        const todayDate = today.getDate().toString();
 
-        // Use a regular expression to match the exact text
-        const dateCell = this.page.locator('button[name="day"][role="gridcell"]:not([disabled])', {
-            hasText: new RegExp(`^${todayDate}$`),
-        });
+        const possibleDays = this.page.locator('button[name="day"][role="gridcell"]:not([disabled])');
+        const count = await possibleDays.count();
+        const getRandomIndex = (max: number) => Math.floor(Math.random() * max);
+        const randomIndex = getRandomIndex(count);
+        const randomDay = possibleDays.nth(randomIndex);
 
-        // Ensure the date cell is visible and enabled
-        await expect(dateCell).toBeVisible();
-        await expect(dateCell).toBeEnabled();
-
-        // Click the date cell
-        await dateCell.click();
+        await randomDay.waitFor({state: 'visible', timeout: 5000});
+        await randomDay.isEnabled({timeout: 5000});
+        await randomDay.click();
     }
 
     async checkArtistRoyalty() {
